@@ -3,18 +3,24 @@
 <head> Welcome to our beautiful Thermostat display </head>
 <body>
 <script src="src/thermostat.js"></script>
+<script src="src/Helpers.js"></script>
 
 thermostat display
+<div id='temp'>
+20
+</div>
+<div id='power-saving'>
+true
+</div>
 
-<ul><li><button id='up'>Up</button>
-</li><li><button id='down'>Down</button>
-</li><li><button id='reset'>Reset </button>
-</li><li><button id='powersaveon'>Power Saving Mode ON</button>
-</li><li><button id='powersaveoff'>Power Saving Mode OFF</button>
+<p id="temperature"></p>
+<ul><li><button id='up' onclick="thermos.Up()">Up</button>
+</li><li><button id='down' onclick="thermos.Down()">Down</button>
+</li><li><button id='reset' onclick="thermos.Reset()">Reset </button>
+</li><li><button id='powersaveon' onclick="thermos.PowerOn()">Power Saving Mode ON</button>
+</li><li><button id='powersaveoff' onclick="thermos.PowerOff()">Power Saving Mode OFF</button>
 </li></ul>
 
 </body>
 </head>
 </html>
-
-<iframe width="100%" height="300" src="//jsfiddle.net/2FQr4/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

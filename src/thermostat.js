@@ -39,3 +39,5 @@ Thermostat.prototype.maxTemperature = function() {
     return 32;
   };
 };
+
+thermos = new Thermostat;
