@@ -6,14 +6,16 @@
 <script src="src/thermostat.js"></script>
 <script src="src/Helpers.js"></script>
 
- <script>
+<!-- This script fetches most recent temp and powersave values from the server -->
+<script>
 $.getJSON('http://localhost:9292/temp.json', function( json ) {
-  thermos.temp = json.temp;
+  thermos.temp = parseInt(json.temp);
   document.getElementById('temp').innerHTML = thermos.temp;
 });
-//   on.pageload
-//   thermy = new Thermostat
-//   $getJSON('server url' {temp => thermy.Temp, powersavingmode => thermy.powerSavingMode})
+$.getJSON('http://localhost:9292/powerSavingMode.json', function( json ) {
+  thermos.powerSavingMode = (json.powerSavingMode === "true");
+  document.getElementById('power-saving').innerHTML = thermos.powerSavingMode;
+});
 </script>
 
 thermostat display
