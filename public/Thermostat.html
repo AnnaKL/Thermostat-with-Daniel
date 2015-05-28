@@ -6,11 +6,15 @@
 <script src="src/thermostat.js"></script>
 <script src="src/Helpers.js"></script>
 
-// <script>
+ <script>
+$.getJSON('http://localhost:9292/temp.json', function( json ) {
+  thermos.temp = json.temp;
+  document.getElementById('temp').innerHTML = thermos.temp;
+});
 //   on.pageload
 //   thermy = new Thermostat
 //   $getJSON('server url' {temp => thermy.Temp, powersavingmode => thermy.powerSavingMode})
-// </script>
+</script>
 
 thermostat display
 <div id='temp'>

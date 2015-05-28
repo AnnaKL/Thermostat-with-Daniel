@@ -6,12 +6,12 @@ Thermostat.prototype.Up = function() {
 Thermostat.prototype.Down = function() {
   this.downButton();
   document.getElementById('temp').innerHTML = thermos.temp;
-  // post temperature to server
+  $.post('http://localhost:9292/temp', { temp: thermos.temp });
 };
 Thermostat.prototype.Reset = function() {
   this.resetButton();
   document.getElementById('temp').innerHTML = thermos.temp;
-  // post temperature to server
+  $.post('http://localhost:9292/temp', { temp: thermos.temp });
 };
 Thermostat.prototype.PowerOn = function() {
   this.powerSavingOn();
