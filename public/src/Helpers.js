@@ -1,3 +1,5 @@
+
+
 Thermostat.prototype.Up = function() {
   this.upButton();
   document.getElementById('temp').innerHTML = thermos.temp;
@@ -24,4 +26,9 @@ Thermostat.prototype.PowerOff = function() {
   this.powerSavingOff();
   document.getElementById('power-saving').innerHTML = thermos.powerSavingMode;
   $.post('http://localhost:9292/powerSavingMode', { powersavingmode: false });
+};
+
+Thermostat.prototype.ChangeColor = function() {
+  this.colors();
+  document.getElementById('temp').innerHTML = thermos.temp;
 };

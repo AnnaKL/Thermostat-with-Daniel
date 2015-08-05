@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head> Welcome to our beautiful Thermostat display </head>
+<head> Welcome to Thermostat display </head>
 <body>
 <script src="lib/jquery.js"></script>
 <script src="src/thermostat.js"></script>
 <script src="src/Helpers.js"></script>
-
+§
 <!-- This script fetches most recent temp and powersave values from the server -->
 <script>
 $.getJSON('http://localhost:9292/temp.json', function( json ) {
@@ -15,13 +15,15 @@ $.getJSON('http://localhost:9292/temp.json', function( json ) {
 $.getJSON('http://localhost:9292/powerSavingMode.json', function( json ) {
   thermos.powerSavingMode = (json.powerSavingMode === "true");
   document.getElementById('power-saving').innerHTML = thermos.powerSavingMode;
+
 });
 </script>
 
-thermostat display
+
 <div id='temp'>
 20
 </div>
+Power saving mode on:
 <div id='power-saving'>
 true
 </div>
@@ -34,6 +36,7 @@ true
 </li><li><button id='powersaveoff' onclick="thermos.PowerOff()">Power Saving Mode OFF</button>
 </li></ul>
 
+<div>
 </body>
 </head>
 </html>
